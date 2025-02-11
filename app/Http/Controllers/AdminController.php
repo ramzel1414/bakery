@@ -19,6 +19,15 @@ class AdminController extends Controller
         
         $bread->name = $request->name;
         $bread->description = $request->description;
+
+        //putting image to the public folder
+        $image = $request->image;
+        $imagename = time().'.'.$image->getClientOriginalExtension();
+        //move the image to the public folder
+        $request->image->move('postimage', $imagename);
+        //store imagename to image column
+        $bread->image = $imagename;
+
         $bread->save();
 
         return redirect()->back();

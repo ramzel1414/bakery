@@ -35,7 +35,7 @@
 
                 <div>
                     <x-input-label for="image" :value="__('Image')" />
-                    <x-image-input id="description" name="description" type="file" class="mt-1 block w-full"  required autocomplete="username" />
+                    <x-image-input id="image" name="image" type="file" class="mt-1 block w-full"  required autocomplete="username" />
                     <x-input-error class="mt-2" :messages="$errors->get('email')" />
                 </div>
 
