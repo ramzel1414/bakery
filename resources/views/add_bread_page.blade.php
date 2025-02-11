@@ -18,10 +18,8 @@
                     {{ __("Incorporate your bread binformation and image.") }}
                 </p>
             </header>
-
-            <form method="post" action="{{ route('profile.update') }}" class="mt-6 space-y-6">
+            <form method="POST" action="{{ route('create-bread') }}" enctype="multipart/form-data"class="mt-6 space-y-6">
                 @csrf
-                @method('patch')
 
                 <div>
                     <x-input-label for="name" :value="__('Name')" />
@@ -43,7 +41,7 @@
 
 
                 <div class="flex items-center gap-4">
-                    <x-primary-button>{{ __('Save') }}</x-primary-button>
+                    <x-primary-button>{{ __('Add') }}</x-primary-button>
                 </div>
             </form>
           </section>

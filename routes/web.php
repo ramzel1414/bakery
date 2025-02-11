@@ -21,3 +21,4 @@ Route::middleware('auth')->group(function () {
 require __DIR__.'/auth.php';
 
 Route::get('/add-bread', [AdminController::class, 'add_bread_page'])->name('add-bread');
+Route::post('/create-bread', [AdminController::class, 'create_bread'])->name('create-bread');
