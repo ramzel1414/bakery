@@ -30,7 +30,7 @@ class AdminController extends Controller
 
         $bread->save();
 
-        return redirect()->back();
+        return redirect()->back()->with('message', 'Bread added successfully');
     }
     
 }
