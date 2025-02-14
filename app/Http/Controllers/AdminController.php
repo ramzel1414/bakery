@@ -15,6 +15,7 @@ class AdminController extends Controller
 
     public function create_bread(Request $request)
     {
+        //Bread is a model that we just using php artisan make:model Bread -m
         $bread = new Bread;
         
         $bread->name = $request->name;
@@ -31,6 +32,13 @@ class AdminController extends Controller
         $bread->save();
 
         return redirect()->back()->with('message', 'Bread added successfully');
+    }
+
+    public function show_bread() {
+        
+        $bread = Bread::all();
+
+        return view('show_bread_page', compact('bread'));
     }
     
 }

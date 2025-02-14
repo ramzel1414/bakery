@@ -20,8 +20,8 @@
                     <x-nav-link :href="route('add-bread')" :active="request()->routeIs('add-bread')">
                         {{ __('Add Bread') }}
                     </x-nav-link>
-                    <x-nav-link :href="route('dashboard')">
-                        {{ __('About Us') }}
+                    <x-nav-link :href="route('show-bread')" :active="request()->routeIs('show-bread')">
+                        {{ __('Show Bread') }}
                     </x-nav-link>
                     <x-nav-link :href="route('dashboard')">
                         {{ __('Products') }}
