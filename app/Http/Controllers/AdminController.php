@@ -40,5 +40,14 @@ class AdminController extends Controller
 
         return view('show_bread_page', compact('bread'));
     }
+
+    public function delete_bread($id) {
+        
+        $bread = Bread::find($id);
+
+        $bread->delete();
+
+        return redirect()->back()->with('message', 'Bread deleted successfully!');
+    }
     
 }

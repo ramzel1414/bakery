@@ -23,3 +23,4 @@ require __DIR__.'/auth.php';
 Route::get('/add-bread', [AdminController::class, 'add_bread_page'])->name('add-bread');
 Route::post('/create-bread', [AdminController::class, 'create_bread'])->name('create-bread');
 Route::get('/show-bread', [AdminController::class, 'show_bread'])->name('show-bread');
+Route::get('/delete-bread/{id}', [AdminController::class, 'delete_bread'])->name('delete-bread');

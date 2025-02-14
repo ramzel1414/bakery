@@ -1,6 +1,6 @@
 <x-app-layout>
   @if(session()->has('message'))
-  <div style="color: rgb(7, 105, 36); background: rgb(156, 204, 156); padding: 8px;">
+  <div style="color: rgb(226, 226, 226); background: rgb(180, 97, 76); padding: 8px;">
     <button style="display: absolute; float: right; top: 0px; bottom: 0px; left: 0px; margin-right: 0.5rem; font-weight: 700;" onclick="this.parentElement.remove();">X</button>
     {{ session()->get('message') }}
   </div>
@@ -17,6 +17,7 @@
       <th>Name</th>
       <th>Description</th>
       <th>Image</th>
+      <th style="width: 25%;">Action</th>
     </tr>
     @foreach ($bread as $bread)
     <tr>
@@ -25,6 +26,10 @@
       <td style="">
         <img style="object-fit: cover; width: 150px; height: 100px; display: block; margin: auto;" src="postimage/{{$bread->image}}" alt="bread-image">
       </td>
+      <td>
+        <a class="btn btn-warning" href="{{route('delete-bread', $bread->id)}}" onclick="confirm('Are you sure you want to delete this?')">Delete</a>
+      </td>
+
     </tr>
     @endforeach
 

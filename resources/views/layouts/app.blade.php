@@ -13,6 +13,18 @@
 
         <!-- Scripts -->
         @vite(['resources/css/app.css', 'resources/js/app.js'])
+
+        <style>
+            .btn-warning {
+                padding: 8px 20px ;
+                background: rgb(141, 46, 8); 
+                color: rgb(231, 231, 231);
+                border-radius: 6px;
+            }
+            .btn-warning:hover {
+                background: rgb(185, 86, 47); 
+            }
+        </style>
     </head>
     <body class="font-sans antialiased">
         <div class="min-h-screen bg-gray-100 dark:bg-gray-900">
