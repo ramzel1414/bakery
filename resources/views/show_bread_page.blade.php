@@ -27,6 +27,7 @@
         <img style="object-fit: cover; width: 150px; height: 100px; display: block; margin: auto;" src="postimage/{{$bread->image}}" alt="bread-image">
       </td>
       <td>
+        <a class="btn btn-gray" href="{{route('edit-bread', $bread->id)}}">Edit</a>
         <a class="btn btn-warning" href="{{route('delete-bread', $bread->id)}}" onclick="confirm('Are you sure you want to delete this?')">Delete</a>
       </td>
 

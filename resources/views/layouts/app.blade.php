@@ -24,6 +24,15 @@
             .btn-warning:hover {
                 background: rgb(185, 86, 47); 
             }
+            .btn-gray {
+                padding: 8px 20px ;
+                background: rgb(63, 62, 61); 
+                color: rgb(231, 231, 231);
+                border-radius: 6px;
+            }
+            .btn-gray:hover {
+                background: rgb(88, 87, 86); 
+            }
         </style>
     </head>
     <body class="font-sans antialiased">

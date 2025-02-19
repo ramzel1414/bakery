@@ -49,5 +49,11 @@ class AdminController extends Controller
 
         return redirect()->back()->with('message', 'Bread deleted successfully!');
     }
-    
+
+    public function edit_bread($id) {
+        
+        $bread = Bread::find($id);
+
+        return view('edit_bread_page', compact('bread'));
+    }
 }

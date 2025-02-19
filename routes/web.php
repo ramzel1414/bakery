@@ -24,3 +24,4 @@ Route::get('/add-bread', [AdminController::class, 'add_bread_page'])->name('add-
 Route::post('/create-bread', [AdminController::class, 'create_bread'])->name('create-bread');
 Route::get('/show-bread', [AdminController::class, 'show_bread'])->name('show-bread');
 Route::get('/delete-bread/{id}', [AdminController::class, 'delete_bread'])->name('delete-bread');
+Route::get('/edit-bread/{id}', [AdminController::class, 'edit_bread'])->name('edit-bread');
