@@ -24,7 +24,7 @@
       <td>{{$bread->name}}</td>
       <td>{{$bread->description}}</td>
       <td style="">
-        <img style="object-fit: cover; width: 150px; height: 100px; display: block; margin: auto;" src="postimage/{{$bread->image}}" alt="bread-image">
+        <img style="object-fit: cover; width: 150px; height: 100px; display: block; margin: auto;" src="/postimage/{{$bread->image}}" alt="bread-image">
       </td>
       <td>
         <a class="btn btn-gray" href="{{route('edit-bread', $bread->id)}}">Edit</a>

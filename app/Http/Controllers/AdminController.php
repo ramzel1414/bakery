@@ -52,8 +52,34 @@ class AdminController extends Controller
 
     public function edit_bread($id) {
         
+        //bread represents the table and the ->here , here represents column or label
         $bread = Bread::find($id);
 
+
+
+
         return view('edit_bread_page', compact('bread'));
+    }
+
+    public function update_bread(Request $request, $id) {
+
+        $bread = Bread::find($id);
+
+        $bread->name = $request->name;
+        $bread->description = $request->description;
+        
+        $image = $request->image;
+        if($image) {
+            //putting image to the public folder
+            $imagename = time().'.'.$image->getClientOriginalExtension();
+            //move the image to the public folder
+            $request->image->move('postimage', $imagename);
+            //store imagename to image column
+            $bread->image = $imagename;
+        }
+        
+        $bread->save();
+
+        return redirect()->back()->with('message', 'The Bread has been updated successfully');
     }
 }
