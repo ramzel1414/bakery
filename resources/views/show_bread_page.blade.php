@@ -14,6 +14,7 @@
 
   <table style="color: gray; border: 1px solid gray; width: 80%; text-align: center; margin: 12px auto auto auto;">
     <tr style="color: white;">
+      <th>Baker</th>
       <th>Name</th>
       <th>Description</th>
       <th>Image</th>
@@ -21,6 +22,7 @@
     </tr>
     @foreach ($bread as $bread)
     <tr>
+      <td>{{$bread->baker->name}}</td>
       <td>{{$bread->name}}</td>
       <td>{{$bread->description}}</td>
       <td style="">

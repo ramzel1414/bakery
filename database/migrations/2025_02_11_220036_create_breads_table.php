@@ -13,6 +13,7 @@ return new class extends Migration
     {
         Schema::create('breads', function (Blueprint $table) {
             $table->id();
+            $table->foreignId('baker_id')->constrained('users')->onDelete('cascade');
             $table->string('name')->nullable();
             $table->string('image')->nullable();
             $table->longText('description')->nullable();

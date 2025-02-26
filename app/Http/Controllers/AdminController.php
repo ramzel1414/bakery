@@ -3,7 +3,10 @@
 namespace App\Http\Controllers;
 
 use App\Models\Bread;
+use App\Models\User;
 use Illuminate\Http\Request;
+
+use Illuminate\Support\Facades\Auth;
 
 
 class AdminController extends Controller
@@ -29,6 +32,12 @@ class AdminController extends Controller
         //store imagename to image column
         $bread->image = $imagename;
 
+        // $user = Auth::user(); //1
+        $user = User::findOrFail($request->baker_id);  //2 if user admin can change other baker
+
+        // Assign baker_id from authenticated user
+        $bread->baker_id = $user->id;
+
         $bread->save();
 
         return redirect()->back()->with('message', 'Bread added successfully');
@@ -36,7 +45,8 @@ class AdminController extends Controller
 
     public function show_bread() {
         
-        $bread = Bread::all();
+        // Fetch all breads with the baker's details (user relationship)
+        $bread = Bread::with('baker')->get();
 
         return view('show_bread_page', compact('bread'));
     }
