@@ -8,6 +8,8 @@ use Illuminate\Http\Request;
 
 use Illuminate\Support\Facades\Auth;
 
+use Alert;
+
 
 class AdminController extends Controller
 {
@@ -39,6 +41,8 @@ class AdminController extends Controller
         $bread->baker_id = $user->id;
 
         $bread->save();
+
+        Alert::success('Success', 'You just added a new bread!');
 
         return redirect()->back()->with('message', 'Bread added successfully');
     }
