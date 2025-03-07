@@ -8,7 +8,9 @@ use Illuminate\Http\Request;
 
 use Illuminate\Support\Facades\Auth;
 
-use Alert;
+//this is working but I just use the full facade path (seems vscode don't recognize this)
+// use Alert;
+use RealRashid\SweetAlert\Facades\Alert;     
 
 
 class AdminController extends Controller
@@ -44,7 +46,7 @@ class AdminController extends Controller
 
         Alert::success('Success', 'You just added a new bread!');
 
-        return redirect()->back()->with('message', 'Bread added successfully');
+        return redirect()->route('show-bread');
     }
 
     public function show_bread() {
@@ -61,15 +63,15 @@ class AdminController extends Controller
 
         $bread->delete();
 
-        return redirect()->back()->with('message', 'Bread deleted successfully!');
+        Alert::success('Deleted', 'You just deleted the bread!');
+
+        return redirect()->back();
     }
 
     public function edit_bread($id) {
         
         //bread represents the table and the ->here , here represents column or label
         $bread = Bread::find($id);
-
-
 
 
         return view('edit_bread_page', compact('bread'));
@@ -94,6 +96,8 @@ class AdminController extends Controller
         
         $bread->save();
 
-        return redirect()->back()->with('message', 'The Bread has been updated successfully');
+        Alert::success('Updated', 'The Bread has been updated successfully');
+
+        return redirect()->route('show-bread');
     }
 }

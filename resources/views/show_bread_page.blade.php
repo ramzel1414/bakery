@@ -1,11 +1,7 @@
 <x-app-layout>
-  @if(session()->has('message'))
-  <div style="color: rgb(226, 226, 226); background: rgb(180, 97, 76); padding: 8px;">
-    <button style="display: absolute; float: right; top: 0px; bottom: 0px; left: 0px; margin-right: 0.5rem; font-weight: 700;" onclick="this.parentElement.remove();">X</button>
-    {{ session()->get('message') }}
-  </div>
-  @endif
   
+  @include('sweetalert::alert')
+
   <x-slot name="header">
       <h2 class="font-semibold text-xl text-gray-800 dark:text-gray-200 leading-tight">
           {{ __('Show Bread') }}
