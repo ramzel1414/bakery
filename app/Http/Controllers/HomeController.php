@@ -14,4 +14,10 @@ class HomeController extends Controller
 
         return view('welcome', compact('bread'));
     }
+
+    public function bread_details($id) {
+        $bread = Bread::find($id);
+
+        return view('bread-details', compact('bread'));
+    }
 }

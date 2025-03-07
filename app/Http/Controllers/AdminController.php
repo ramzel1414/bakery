@@ -32,8 +32,8 @@ class AdminController extends Controller
         //store imagename to image column
         $bread->image = $imagename;
 
-        // $user = Auth::user(); //1
-        $user = User::findOrFail($request->baker_id);  //2 if user admin can change other baker
+        $user = Auth::user(); //#1 getting the currently logged in user
+        // $user = User::findOrFail($request->baker_id);  //2 if user admin can change other baker
 
         // Assign baker_id from authenticated user
         $bread->baker_id = $user->id;

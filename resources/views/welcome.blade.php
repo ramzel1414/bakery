@@ -95,7 +95,7 @@
                       <span class="block opacity-75 -mb-1">Ramram</span>
                       <div class="flex justify-between">
                           <span class="block font-semibold text-xl">{{$bread->name}}</span>
-                          <span class="block bg-white rounded-full text-purple-500 text-xs font-bold px-3 py-2 leading-none flex items-center">$68.50</span>
+                          <a href="{{route('bread-details', $bread->id)}}" class="bg-white rounded-ful text-base text-black rounded-md hover:font-bold px-3 py-2 leading-none flex items-center cursor-pointer">see more</a>
                       </div>
                   </div>
                 </div>

@@ -26,3 +26,5 @@ Route::get('/show-bread', [AdminController::class, 'show_bread'])->name('show-br
 Route::get('/delete-bread/{id}', [AdminController::class, 'delete_bread'])->name('delete-bread');
 Route::get('/edit-bread/{id}', [AdminController::class, 'edit_bread'])->name('edit-bread');
 Route::post('/update-bread/{id}', [AdminController::class, 'update_bread'])->name('update-bread');
+
+Route::get('/bread-details/{id}', [HomeController::class, 'bread_details'])->name('bread-details');
